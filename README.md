@@ -1,5 +1,5 @@
-BUILD iN x86 + Use Multi-Byte-Character-Set
+INFORMATION: BUILD iN x86 + Use Multi-Byte-Character-Set
 
+AUTHOR: SLIDES AKA MEXICO
 
-
-Cheat will be updated every week new fetures and offsets will auto update since i use this cheat personally :D
+NEWS: Cheat will be updated every week new fetures and offsets will auto update since i use this cheat personally :D
