@@ -51,6 +51,7 @@ int main(){
 			(localPlayerFlags & (1 << 0)) ?
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 6) :
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 4);
+			mem.Write<std::uintptr_t>(client + offsets::m_iFOV, 90);
 
 
 		const auto glowObjectManager = mem.Read<std::uintptr_t>(client + offsets::glowObjectManager);
