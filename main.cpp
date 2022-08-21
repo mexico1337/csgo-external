@@ -11,7 +11,6 @@ namespace offsets
 	constexpr auto dwClientState_State = 0x108;
 	constexpr auto dwClientState_ViewAngles = 0x4D90;
 
-
 	constexpr auto flags = 0x104;
 	constexpr auto forceJump = 0x52868EC;
 	constexpr auto entityList = 0x4DDC90C;
@@ -19,6 +18,7 @@ namespace offsets
 	constexpr auto teamNum = 0xF4;
 	constexpr auto glowIndex = 0x10488;
 	constexpr auto m_iFOV = 0x31F4;
+	constexpr auto dwSetClanTag = 0x8A410;
 }
 
 __declspec(align(16)) struct Color
@@ -52,6 +52,10 @@ int main(){
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 6) :
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 4);
 			mem.Write<std::uintptr_t>(client + offsets::m_iFOV, 90);
+			mem.Write<std::uintptr_t>(client + offsets::dwSetClanTag, Valve);
+
+		
+
 
 
 		const auto glowObjectManager = mem.Read<std::uintptr_t>(client + offsets::glowObjectManager);
