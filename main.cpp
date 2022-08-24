@@ -1,8 +1,6 @@
 #include "memory.h"
-
 #include <thread>
 #include <iostream>
-
 
 namespace offsets
 {
@@ -10,7 +8,6 @@ namespace offsets
 	constexpr auto m_viewPunchAngle = 0x3030;
 	constexpr auto dwClientState_State = 0x108;
 	constexpr auto dwClientState_ViewAngles = 0x4D90;
-
 	constexpr auto flags = 0x104;
 	constexpr auto forceJump = 0x52868EC;
 	constexpr auto entityList = 0x4DDC90C;
@@ -25,16 +22,11 @@ __declspec(align(16)) struct Color
 {
 	constexpr Color(const float r, const float g, const float b, const float a = 1.f) noexcept :
 		r(r), g(g), b(b), a(a) { }
-
 	float r, g, b, a;
 };
-
-
-
 int main(){
 	const auto mem = Memory("csgo.exe");
 	const auto client = mem.GetModuleAddress("client.dll");
-
 	constexpr const auto color = Color{ 1.f, 0.f, 1.f };
 
 	while (true)
@@ -43,25 +35,14 @@ int main(){
 		const auto localPlayer = mem.Read<std::uintptr_t>(client + offsets::localPlayer);
 		if (!localPlayer)
 			continue;
-
 		const auto localPlayerTeam = mem.Read<std::uintptr_t>(localPlayer + offsets::teamNum);
 		const auto localPlayerFlags = mem.Read<std::uintptr_t>(localPlayer + offsets::flags);
-
 		if (GetAsyncKeyState(VK_SPACE))
 			(localPlayerFlags & (1 << 0)) ?
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 6) :
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 4);
 			mem.Write<std::uintptr_t>(client + offsets::m_iFOV, 90);
-
-		
-
-
-
 		const auto glowObjectManager = mem.Read<std::uintptr_t>(client + offsets::glowObjectManager);
-
-
-
-
 		for (auto i = 1; i <= 32; ++i)
 		{
 			const auto entity = mem.Read<std::uintptr_t>(client + offsets::entityList + i * 0x10);
