@@ -52,7 +52,6 @@ int main(){
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 6) :
 			mem.Write<std::uintptr_t>(client + offsets::forceJump, 4);
 			mem.Write<std::uintptr_t>(client + offsets::m_iFOV, 90);
-			mem.Write<std::uintptr_t>(client + offsets::dwSetClanTag, Valve);
 
 		
 
