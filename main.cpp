@@ -9,9 +9,9 @@ namespace offsets
 	constexpr auto dwClientState_State = 0x108;
 	constexpr auto dwClientState_ViewAngles = 0x4D90;
 	constexpr auto flags = 0x104;
-	constexpr auto forceJump = 0x52878FC;
-	constexpr auto entityList = 0x4DDD91C;
-	constexpr auto glowObjectManager = 0x53265D0;
+	constexpr auto forceJump = 0x528791C;
+	constexpr auto entityList = 0x4DDD93C;
+	constexpr auto glowObjectManager = 0x5326638;
 	constexpr auto teamNum = 0xF4;
 	constexpr auto glowIndex = 0x10488;
 	constexpr auto m_iFOV = 0x31F4;
